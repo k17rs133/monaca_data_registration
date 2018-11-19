@@ -40,6 +40,16 @@
         .catch(function(m){
           alert("fail:"+JSON.stringify(m));
         });
+
+   function fetchDemo(){
+     var TestClass=ncmb.DataStore("TestClass");
+     TestClass.fetch()
+     .then(function(results){
+       var data=results.get("message");
+       var update=results.get("updateDate");
+       $("#fetch").html(data+":"+update);
+     }
+   })
     </script>
 </head>
 <body>
@@ -48,6 +58,6 @@
     <div>Touch Start Demo to save {"message":"Hello, NCMB!"} to mobile backend.</div>
     <a class="button--large" onclick="fetchDemo()">Fetch Demo</a>
     <div>fetch damo</div>
-    ＜div id="fetch">data here</div>
+    ＜div id="fetch"> data here</div>
 </body>
 </html>
