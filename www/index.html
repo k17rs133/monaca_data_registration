@@ -13,24 +13,40 @@
         function startDemo() {
             var TestClass = ncmb.DataStore("TestClass");
             var testClass = new TestClass();
-            var key   = "message";
-            var value = "Hello, NCMB!";
-            testClass.set(key, value);
+            var key="message";
+            var value="Hello,NCMB!";
+            testClass.set(key,value);
             testClass.save()
-                .then(function() {
+              .then(function() {
                     // 保存完了後に実行される
-                    alert("New object created with objectId: " + testClass.objectId);
+                    alert("New object created with objectId:"+testClass.objectId);
                 })
                 .catch(function(error) {
                     // エラー時に実行される
-                    alert("Failed to create new object, with error code: " + error.text);
+                    alert("Failed to create new object,with error code:"+error.text);
                 });
         }
+
+        var appkey="アプリケーションキー";
+        var clikey="クライアントキー";
+        var ncmb=new NCMB(appkey,clikey);
+        var TestClass2=ncmb.DataStone(TestClass2);
+        var testClass2=new TestClass2();
+        testClass2.set("message2","hello,worid")
+        .save()
+        .then(function(m){
+          alert("success:"+JSON.stringify(m));
+        })
+        .catch(function(m){
+          alert("fail:"+JSON.stringify(m));
+        });
     </script>
 </head>
 <body>
     <h1>NiftyCloud mobile backend!</h1>
     <a class="button--large" onclick="startDemo()">Start Demo</a>
     <div>Touch Start Demo to save {"message":"Hello, NCMB!"} to mobile backend.</div>
+    <a class="button--large" onclick="fetchDemo()">Fetch Demo</a>
+    <div>fetch damo</div>
 </body>
 </html>
