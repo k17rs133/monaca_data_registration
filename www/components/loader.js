@@ -10266,8 +10266,6 @@ window.monaca.cloud = window.monaca.cloud || {};
 /*** <End:monaca-core-utils LoadJs:"components/monaca-core-utils/monaca-core-utils.js"> ***/
 /*** <End:monaca-core-utils> ***/
 
-
-
 /*** <Start:ncmb> ***/
 /*** <Start:ncmb LoadJs:"components/ncmb/ncmb.min.js"> ***/
 /**
@@ -42211,5 +42209,6 @@ exports.createContext = Script.createContext = function (context) {
 
 },{"indexof":302}]},{},[7]);
 
+;
 /*** <End:ncmb LoadJs:"components/ncmb/ncmb.min.js"> ***/
 /*** <End:ncmb> ***/
